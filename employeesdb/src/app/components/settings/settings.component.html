@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <h3>Settings <i class="fa fa-sliders"></i></h3>
+        </div>
+        <div class="col-sm-3">
+            <a href="#" routerLink="/" class="btn btn-success">back to dashboard <i class="fa fa-arrow-left"></i></a>
+        </div>
+        <hr>
+    </div>
+</div>
+<div class="container">
+    <form (submit)="saveSettings()">
+        <label class="checkbox-inline">
+            <input type="checkbox" value="" [checked]="settings.isRegisterOpen"
+                (change)="settings.isRegisterOpen=!settings.isRegisterOpen" name="settings.isRegisterOpen">Open
+            Registration
+        </label>&nbsp; &nbsp; &nbsp;
+        <label class="checkbox-inline">
+            <input type="checkbox" value="" [checked]="settings.disableSalary"
+                (change)="settings.disableSalary=!settings.disableSalary" name="settings.disableSalary">Enable Salary
+        </label>&nbsp; &nbsp; &nbsp;
+        <label class="checkbox-inline">
+            <input type="checkbox" value="" [checked]="settings.isSalaryEditable"
+                (change)="settings.isSalaryEditable=!settings.isSalaryEditable"
+                name="settings.isSalaryEditable">Editable
+            Salary
+        </label>&nbsp; &nbsp; &nbsp;
+        <div>
+            <button type="submit" class="btn btn-success">Save Settings</button>
+        </div>
+    </form>
+</div>

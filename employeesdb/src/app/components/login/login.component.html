@@ -1,0 +1,20 @@
+<div class="conatiner">
+    <div class="row">
+        <div class="col-md-12 offset-md-12">
+            <img src="/assets/img/logo.png" class="mx-auto d-block" alt="Card image"
+                style="width: 180px;height: 180px;">
+
+            <form (submit)="login()">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" name="email" class="form-control" required [(ngModel)]="email">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control"  required [(ngModel)]="password">
+                </div>
+                <button type="submit" class="btn btn-info btn-block">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

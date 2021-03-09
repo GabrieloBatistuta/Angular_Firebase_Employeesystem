@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-sm-6">
+        <h2><i class="fa fa-users"></i>
+            Total Employees :{{totalEmployees}}</h2>
+    </div>
+    <div class="col-sm-6">
+        <h2><i class="fa fa-money"></i>
+            Total Salary : {{totalSalary | currency:'EUR' }}</h2>
+
+    </div>
+</div>
+
+<div *ngIf="employees?.length>0 ; else elseBlock">
+    <div class="container">
+        <table class="table table-inverse">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>email</th>
+                    <th>country</th>
+                    <th>city</th>
+                    <th>phone</th>
+                    <th>salary</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of employees; let i =index">
+                    <td>{{item.$key}}</td>
+                    <td>{{item.firstName}}</td>
+                    <td>{{item.lastName}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.country}}</td>
+                    <td>{{item.city}}</td>
+                    <td>{{item.phone}}</td>
+                    <td>{{item.salary | currency:'EUR'}}</td>
+                    <td><a href="#" [routerLink]="['employee/'+item.$key]" class="btn btn-primary">more <i class="fa fa-info-circle"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<ng-template #elseBlock>
+    <h1 class="emptyDatabase">OOPS! empty database</h1>
+</ng-template>
